@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deck Of Chances - Daily Fun Predictions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a3a2e 0%, #0d1f1a 100%);
+            min-height: 100vh;
+            color: #e8f5e9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            color: #e8f5e9;
+        }
+
+        .logo-container {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 30px;
+            background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+            border: 3px solid #4caf50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            font-size: 60px;
+            font-weight: bold;
+            color: #e8f5e9;
+            overflow: hidden;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #a5d6a7;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .tagline {
+            font-size: 1.3em;
+            color: #c8e6c9;
+            font-weight: 300;
+        }
+
+        .card-display {
+            background: #1b3129;
+            border: 2px solid #2e7d32;
+            padding: 60px 40px;
+            margin: 40px auto;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-placeholder {
+            font-size: 1.2em;
+            color: #a5d6a7;
+            font-style: italic;
+        }
+
+        .info-section {
+            background: #1b3129;
+            border: 1px solid #2e7d32;
+            padding: 40px;
+            margin: 30px auto;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .info-section h2 {
+            color: #66bb6a;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .info-section p {
+            line-height: 1.8;
+            color: #c8e6c9;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+            color: #e8f5e9;
+            border: 2px solid #4caf50;
+            box-shadow: 0 4px 12px rgba(46, 125, 50, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(46, 125, 50, 0.6);
+            background: linear-gradient(135deg, #388e3c 0%, #2e7d32 100%);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #66bb6a;
+            border: 2px solid #4caf50;
+        }
+
+        .btn-secondary:hover {
+            background: #2e7d32;
+            color: #e8f5e9;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #c8e6c9;
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: #66bb6a;
+            text-decoration: underline;
+        }
+
+        .instagram-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 20px 0;
+            display: inline-block;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .instagram-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .tagline {
+                font-size: 1.1em;
+            }
+
+            .card-display {
+                padding: 40px 20px;
+                min-height: 300px;
+            }
+
+            .info-section {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <!-- Replace 'logo.png' with your image filename -->
+                <img src="logo.png" alt="Deck Of Chances Logo">
+            </div>
+            <h1>Deck Of Chances</h1>
+            <p class="tagline">Your Daily Dose of Fun Predictions</p>
+        </header>
+
+        <div class="card-display">
+            <div class="card-placeholder">
+                <!-- Your animated playing card will go here -->
+                <p>✨ Daily predictions delivered with a shuffle ✨</p>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>About</h2>
+            <p><strong>Deck of Chances</strong> is an automated Instagram bot that posts daily short, entertaining predictions. These predictions are not serious or factual – they are purely for fun and engagement.</p>
+            <p>Every day, we shuffle the deck and share lighthearted predictions to brighten your feed. Remember, it's all in good fun!</p>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://instagram.com/deckofchances" class="instagram-link" target="_blank">
+                    📱 Follow us on Instagram
+                </a>
+            </div>
+        </div>
+
+        <div class="cta-buttons">
+            <a href="privacy.html" class="btn btn-primary">Privacy Policy</a>
+            <a href="terms.html" class="btn btn-secondary">Terms of Service</a>
+        </div>
+
+        <footer>
+            <p>Questions? Contact us at <a href="mailto:contact.deckofchances@gmail.com">contact.deckofchances@gmail.com</a></p>
+            <p style="margin-top: 10px; opacity: 0.8; font-size: 0.9em;">Last Updated: November 6, 2025</p>
+        </footer>
+    </div>
+</body>
+</html>
